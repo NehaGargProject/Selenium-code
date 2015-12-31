@@ -3,11 +3,28 @@
 <suite name="SeleniumSuite" parallel="false">
   <test name="CreateTestNG">
     <classes>
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample"/>
       <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDataDrivenSearchExample"/>
       <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumSimpleSearchExample"/>
       <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample"/>
       <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDriverInjectionExample"/>
     </classes>
-  </test> <!-- CreateTestNG -->
+  </test> 
+  
+  <test name="MultipleBrowserTestforfirefox">
+      	<parameter name="browser" value="firefox"></parameter>
+    <classes>
+        <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample"/>
+  	</classes>
+  </test>
+  
+  <test name="MultipleBrowserTestforchrome">
+   <parameter name="browser" value="chrome"></parameter>
+   <parameter name="driverPath" value="C://chromedriver_win32//chromedriver.exe"></parameter>
+   <classes>
+        <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample"/>
+    	  	</classes>
+  </test>
+  
+  
+  <!-- CreateTestNG -->
 </suite> <!-- SeleniumSuite -->

@@ -2,84 +2,54 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="110418" started-at="2015-12-31T03:53:54Z" finished-at="2015-12-31T03:55:44Z">
+  <suite name="SeleniumSuite" duration-ms="8620" started-at="2015-12-31T04:43:29Z" finished-at="2015-12-31T04:43:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="110418" started-at="2015-12-31T03:53:54Z" finished-at="2015-12-31T03:55:44Z">
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample">
-        <test-method status="PASS" signature="springTestContextBeforeTestClass()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextBeforeTestClass" is-config="true" duration-ms="11" started-at="2015-12-30T22:53:54Z" finished-at="2015-12-30T22:53:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestClass -->
-        <test-method status="PASS" signature="springTestContextPrepareTestInstance()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextPrepareTestInstance" is-config="true" duration-ms="5233" started-at="2015-12-30T22:53:54Z" depends-on-methods="org.springframework.test.context.testng.AbstractTestNGSpringContextTests.springTestContextBeforeTestClass" finished-at="2015-12-30T22:53:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextPrepareTestInstance -->
-        <test-method status="PASS" signature="printBrowserUsed()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="printBrowserUsed" is-config="true" duration-ms="1" started-at="2015-12-30T22:53:59Z" finished-at="2015-12-30T22:53:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- printBrowserUsed -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="1" started-at="2015-12-30T22:53:59Z" finished-at="2015-12-30T22:53:59Z">
+    <test name="MultipleBrowserTestforchrome" duration-ms="8620" started-at="2015-12-31T04:43:29Z" finished-at="2015-12-31T04:43:38Z">
+      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample">
+        <test-method status="PASS" signature="initDriver(java.lang.String, java.lang.String)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample@43a25848]" name="initDriver" is-config="true" duration-ms="2946" started-at="2015-12-30T23:43:29Z" finished-at="2015-12-30T23:43:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample.searchTestNGInJCG()]]>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[C://chromedriver_win32//chromedriver.exe]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="searchTestNGInJCG()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="searchTestNGInJCG" duration-ms="87930" started-at="2015-12-30T22:53:59Z" finished-at="2015-12-30T22:55:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchTestNGInJCG -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="8" started-at="2015-12-30T22:55:27Z" finished-at="2015-12-30T22:55:27Z">
+        </test-method> <!-- initDriver -->
+        <test-method status="PASS" signature="searchGoogle(java.lang.String)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample@43a25848]" name="searchGoogle" duration-ms="2366" started-at="2015-12-30T23:43:32Z" data-provider="searchStrings" finished-at="2015-12-30T23:43:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample.searchTestNGInJCG()]]>
+                <![CDATA[TestNG]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextBeforeTestMethod(java.lang.reflect.Method)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextBeforeTestMethod" is-config="true" duration-ms="0" started-at="2015-12-30T22:55:27Z" finished-at="2015-12-30T22:55:27Z">
+        </test-method> <!-- searchGoogle -->
+        <test-method status="PASS" signature="searchGoogle(java.lang.String)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample@43a25848]" name="searchGoogle" duration-ms="1750" started-at="2015-12-30T23:43:35Z" data-provider="searchStrings" finished-at="2015-12-30T23:43:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample.clickOnJCGTestNGArticle()]]>
+                <![CDATA[Selenium]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- springTestContextBeforeTestMethod -->
-        <test-method status="PASS" signature="clickOnJCGTestNGArticle()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="clickOnJCGTestNGArticle" duration-ms="17213" started-at="2015-12-30T22:55:27Z" depends-on-methods="com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample.searchTestNGInJCG" finished-at="2015-12-30T22:55:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickOnJCGTestNGArticle -->
-        <test-method status="PASS" signature="springTestContextAfterTestMethod(java.lang.reflect.Method)[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextAfterTestMethod" is-config="true" duration-ms="0" started-at="2015-12-30T22:55:44Z" finished-at="2015-12-30T22:55:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample.clickOnJCGTestNGArticle()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextAfterTestMethod -->
-        <test-method status="PASS" signature="springTestContextAfterTestClass()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="springTestContextAfterTestClass" is-config="true" duration-ms="1" started-at="2015-12-30T22:55:44Z" finished-at="2015-12-30T22:55:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- springTestContextAfterTestClass -->
-        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample@595b007d]" name="quitDriver" is-config="true" duration-ms="502" started-at="2015-12-30T22:55:44Z" finished-at="2015-12-30T22:55:45Z">
+        </test-method> <!-- searchGoogle -->
+        <test-method status="PASS" signature="quitDriver()[pri:0, instance:com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample@43a25848]" name="quitDriver" is-config="true" duration-ms="1545" started-at="2015-12-30T23:43:37Z" finished-at="2015-12-30T23:43:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitDriver -->
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample -->
+    </test> <!-- MultipleBrowserTestforchrome -->
+  </suite> <!-- SeleniumSuite -->
 </testng-results>
