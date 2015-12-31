@@ -19,8 +19,8 @@ public class TestNGSeleniumBrowserCfgExample {
 
 	@Parameters({"browser", "driverPath"})
 	@BeforeTest
-	public void initDriver(String browser, @Optional("") String driverPath) throws Exception {
-		System.out.println("You are testing on browser " + browser);
+	public void initDriver(@Optional("firefox") String browser, @Optional("") String driverPath) throws Exception {
+		System.out.println("You are testing lalala on browser " + browser);
 		browser = browser.toLowerCase();
 		if (!driverPath.equals("")) {
 			System.setProperty("webdriver.chrome.driver", driverPath);
