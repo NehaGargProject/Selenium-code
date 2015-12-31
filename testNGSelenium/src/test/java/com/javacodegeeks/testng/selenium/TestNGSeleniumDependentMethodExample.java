@@ -28,7 +28,7 @@ public class TestNGSeleniumDependentMethodExample extends AbstractTestNGSpringCo
 		System.out.println("You are in page " + driver.getTitle());
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
-				WebElement link = driver.findElement(By.linkText("TestNG Maven Project Example"));
+				WebElement link = driver.findElement(By.xpath("//*[text()='TestNG Maven Project Example']"));
 				if (link != null) {
 					System.out.println("Going to click on '" + link.getText() + "'");
 					link.click();

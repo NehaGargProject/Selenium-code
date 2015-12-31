@@ -6,8 +6,6 @@
 	<artifactId>testNGSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-    
-
     <build>
       <plugins>
       <plugin>
@@ -18,11 +16,43 @@
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
-        </configuration>
+                <properties>
+                    <property>
+                        <name>usedefaultlisteners</name>
+                        <value>false</value>
+                    </property>
+                    <property>
+                        <name>listener</name>
+                        <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                    </property>
+                </properties>
+                <workingDirectory>target/</workingDirectory>
+            </configuration>
         </plugin>
       </plugins>
     </build>
-	<dependencies>
+    
+    <dependencies>
+    <dependency>
+        <groupId>org.uncommons</groupId>
+        <artifactId>reportng</artifactId>
+        <version>1.1.2</version>
+        <scope>test</scope>
+        <exclusions>
+            <exclusion>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+            	</exclusion>
+        		</exclusions>
+    		</dependency>
+  		 <dependency>
+   			 <groupId>com.google.inject</groupId>
+   			 <artifactId>guice</artifactId>
+    		<version>3.0</version>
+    		<scope>test</scope>
+		</dependency>
+
+	
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
