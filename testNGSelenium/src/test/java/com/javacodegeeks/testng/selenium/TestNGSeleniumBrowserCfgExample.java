@@ -1,5 +1,6 @@
 package com.javacodegeeks.testng.selenium;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +21,7 @@ public class TestNGSeleniumBrowserCfgExample {
 	@Parameters({"browser", "driverPath"})
 	@BeforeTest
 	public void initDriver(@Optional("firefox") String browser, @Optional("") String driverPath) throws Exception {
-		System.out.println("You are testing lalala on browser " + browser);
+		System.out.println("You are testing on browser " + browser);
 		browser = browser.toLowerCase();
 		if (!driverPath.equals("")) {
 			System.setProperty("webdriver.chrome.driver", driverPath);

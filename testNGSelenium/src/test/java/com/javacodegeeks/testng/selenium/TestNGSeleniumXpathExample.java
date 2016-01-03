@@ -7,27 +7,34 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
+import com.javacodegeeks.testing.config.PageXpathConstant;
 
-public class TestNGSeleniumSimpleSearchExample {
+public class TestNGSeleniumXpathExample {
+
 	private WebDriver driver;
-
-	@BeforeSuite
-	public void initDriver() throws Exception {
-		System.out.println("You are testing in firefox");
+	
+	@BeforeClass
+	public void initDriver() throws Exception
+	{
+		System.out.println("Working in firefox driver");
 		driver = new FirefoxDriver();
 	}
-
+	
+	
 	@Test
-	public void searchTestNGInGoogle() {
+	public void searchStringUsingXPATH()
+	{
 		final String searchKey = "TestNG";
-		System.out.println("Search " + searchKey + " in google");
+		//final String GOOGLESEARCHBOX = "//*[@id='sb_ifc0']";
+		System.out.println("Opening google.com");
 		driver.navigate().to("http://www.google.com");
-		WebElement element = driver.findElement(By.name("q"));
-		System.out.println("Enter " + searchKey);
+		System.out.println("Web element as XPATH");
+		WebElement element = driver.findElement(By.xpath(PageXpathConstant.GOOGLESEARCHBOX));
+		System.out.println("Searching search string");
 		element.sendKeys(searchKey);
-		System.out.println("submit");
 		element.submit();
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
@@ -35,12 +42,12 @@ public class TestNGSeleniumSimpleSearchExample {
 						.startsWith(searchKey.toLowerCase());
 			}
 		});
-		System.out.println("Got " + searchKey + " results");
+	
 	}
 
-	@AfterSuite
-	public void quitDriver() throws Exception {
-		driver.quit();
-	}
+		@AfterSuite
+		public void quitDriver() throws Exception {
+			driver.quit();
+		}
+	
 }
-

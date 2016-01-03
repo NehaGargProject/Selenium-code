@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNgSeleniumSuite]">
+  <parameter name="browser" value="firefox"/>
+  <parameter name="driverPath" value="c:\\chromedriver_win32\\chromedriver.exe"/>
+  <test name="TestNgSeleniumChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="driverPath" value="c:\\chromedriver_win32\\chromedriver.exe"/>
+    <classes>
+      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="quitDriver"/>
+          <include name="initDriver"/>
+          <include name="initDriver"/>
+          <include name="searchGoogle" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample -->
+    </classes>
+  </test> <!-- TestNgSeleniumChromeTest(failed) -->
+  <test name="TestNgSeleniumFirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample">
+        <methods>
+          <include name="quitDriver"/>
+          <include name="quitDriver"/>
+          <include name="initDriver"/>
+          <include name="initDriver"/>
+          <include name="searchGoogle" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample -->
+    </classes>
+  </test> <!-- TestNgSeleniumFirefoxTest(failed) -->
+</suite> <!-- Failed suite [TestNgSeleniumSuite] -->
