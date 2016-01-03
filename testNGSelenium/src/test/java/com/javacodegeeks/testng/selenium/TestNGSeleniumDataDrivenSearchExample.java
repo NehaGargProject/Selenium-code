@@ -1,5 +1,9 @@
 package com.javacodegeeks.testng.selenium;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +17,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 @ContextConfiguration("driver_context.xml")
 public class TestNGSeleniumDataDrivenSearchExample extends
 		AbstractTestNGSpringContextTests {
@@ -24,7 +32,7 @@ public class TestNGSeleniumDataDrivenSearchExample extends
 		System.out.println("Driver used is: " + driver);
 	}
 
-	@Test(dataProvider = "searchStrings")
+	@Test(dataProvider = "searchStringsExcelFile")
 	public void searchGoogle(final String searchKey) {
 		System.out.println("Search " + searchKey + " in google");
 		driver.navigate().to("http://www.google.com");
@@ -43,10 +51,47 @@ public class TestNGSeleniumDataDrivenSearchExample extends
 	}
 
 	@DataProvider
-	private Object[][] searchStrings() {
-		return new Object[][] { { "TestNG" }, { "Selenium" }};
+	private Object[][] searchStringsExcelFile() {
+		Object[][] arrayObject = getExcelData("c:/Excel/SampleBook.xls","Sheet1");
+		return arrayObject;
 	}
 
+	public String[][] getExcelData(String fileName, String sheetName)
+	{
+		String[][] arrayExcelData = null;
+		
+		try
+		{
+			
+			FileInputStream fs = new FileInputStream(fileName);
+			Workbook wb = Workbook.getWorkbook(fs);
+			Sheet sh = wb.getSheet(sheetName);
+
+			int totalNoOfCols = sh.getColumns();
+			int totalNoOfRows = sh.getRows();
+			
+			arrayExcelData = new String[totalNoOfRows-1][totalNoOfCols];
+			
+			for (int i= 1 ; i < totalNoOfRows; i++) {
+
+				for (int j=0; j < totalNoOfCols; j++) {
+					arrayExcelData[i-1][j] = sh.getCell(j, i).getContents();
+				}
+
+			}
+			
+	
+		}catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+		e.printStackTrace();
+	} catch (BiffException e) {
+		e.printStackTrace();
+	}
+		return arrayExcelData;
+	}
+	
 	@AfterSuite
 	public void quitDriver() throws Exception {
 		driver.quit();

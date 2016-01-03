@@ -1,62 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" parallel="none">
-  <test name="Test(failed)" parallel="none">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumXpathExample">
-        <methods>
-          <include name="quitDriver"/>
-          <include name="searchStringUsingXPATH"/>
-          <include name="initDriver"/>
-        </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumXpathExample -->
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumSimpleSearchExample">
-        <methods>
-          <include name="initDriver"/>
-          <include name="quitDriver"/>
-        </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumSimpleSearchExample -->
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample">
-        <methods>
-          <include name="springTestContextBeforeTestClass"/>
-          <include name="quitDriver"/>
-          <include name="springTestContextAfterTestClass"/>
-          <include name="springTestContextPrepareTestInstance"/>
-          <include name="searchTestNGInJCG"/>
-          <include name="springTestContextBeforeTestMethod"/>
-          <include name="clickOnJCGTestNGArticle"/>
-          <include name="printBrowserUsed"/>
-          <include name="springTestContextAfterTestMethod"/>
-        </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumDependentMethodExample -->
       <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDataDrivenSearchExample">
         <methods>
           <include name="springTestContextBeforeTestClass"/>
+          <include name="searchGoogle"/>
           <include name="printBrowserUsed"/>
-          <include name="springTestContextAfterTestClass"/>
           <include name="springTestContextPrepareTestInstance"/>
-          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestClass"/>
           <include name="quitDriver"/>
-          <include name="springTestContextAfterTestMethod"/>
         </methods>
       </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumDataDrivenSearchExample -->
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDriverInjectionExample">
-        <methods>
-          <include name="springTestContextBeforeTestClass"/>
-          <include name="quitDriver"/>
-          <include name="printBrowserUsed"/>
-          <include name="springTestContextAfterTestClass"/>
-          <include name="springTestContextPrepareTestInstance"/>
-          <include name="springTestContextBeforeTestMethod"/>
-          <include name="springTestContextAfterTestMethod"/>
-        </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumDriverInjectionExample -->
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample">
-        <methods>
-          <include name="quitDriver"/>
-          <include name="initDriver"/>
-        </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumBrowserCfgExample -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

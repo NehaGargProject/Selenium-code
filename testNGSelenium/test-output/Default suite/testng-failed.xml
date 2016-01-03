@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumXPATHTest">
+      <class name="com.javacodegeeks.testng.selenium.TestNGSeleniumDataDrivenSearchExample">
         <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="searchGoogle"/>
+          <include name="printBrowserUsed"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
           <include name="quitDriver"/>
-          <include name="searchStringUsingXPATH"/>
-          <include name="initDriver"/>
         </methods>
-      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumXPATHTest -->
+      </class> <!-- com.javacodegeeks.testng.selenium.TestNGSeleniumDataDrivenSearchExample -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
