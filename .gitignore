@@ -1,3 +1,8 @@
-testNGSelenium/target
-testNGSelenium/test-output
-
+target
+test-output
+target
+.classpath
+.project
+.idea
+*.iml
+.settings
