@@ -1,6 +1,8 @@
 package com.javacodegeeks.testng.selenium;
 
+import java.io.File;
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,18 +17,46 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+
 public class TestNGSeleniumBrowserCfgExample {
 	private WebDriver driver;	
 
-	@Parameters({"browser", "driverPath"})
+	@Parameters({"browser"})
 	@BeforeTest
-	public void initDriver(@Optional("firefox") String browser, @Optional("") String driverPath) throws Exception {
+	public void initDriver(@Optional("firefox") String browser) throws Exception {
+		
 		System.out.println("You are testing on browser " + browser);
 		browser = browser.toLowerCase();
-		if (!driverPath.equals("")) {
-			System.setProperty("webdriver.chrome.driver", driverPath);
-		}
-		if (browser.equals("chrome")) {			
+
+		if (browser.equals("chrome")) {	
+			String chromeBinaryPath = "";
+		    String osName = System.getProperty("os.name").toUpperCase();
+
+		    if (osName.contains("WINDOWS")) {
+		      chromeBinaryPath = "/chromedriver_win32/chromedriver.exe";
+		    } else if (osName.contains("MAC")) {
+		      chromeBinaryPath = "/chromedriver_mac32/chromedriver";
+
+		      File chromedriver =
+		          new File(ClassLoader.getSystemResource("ChromeDriver" + chromeBinaryPath).getPath());
+
+		      // set application user permissions to 455
+		      chromedriver.setExecutable(true);
+		    } else if (osName.contains("LINUX")) {
+		      chromeBinaryPath = "/chromedriver_linux64/chromedriver";
+
+		      File chromedriver =
+		          new File(ClassLoader.getSystemResource("ChromeDriver" + chromeBinaryPath).getPath());
+
+		      // set application user permissions to 455
+		      chromedriver.setExecutable(true);
+		    }
+
+		    System.setProperty("webdriver.chrome.driver",
+		                       new File(ClassLoader.getSystemResource("ChromeDriver" + chromeBinaryPath)
+		                                    .getPath())
+		                           .getPath());
+
 			driver = new ChromeDriver();
 		} else if (browser.equals("firefox")) {
 			driver = new FirefoxDriver();
@@ -36,7 +66,7 @@ public class TestNGSeleniumBrowserCfgExample {
 	}
 
 	@Test(dataProvider = "searchStrings")
-	public void searchGoogle(final String searchKey) {
+	public void searchGoogleMultiBrowser(final String searchKey) {
 		System.out.println("Search " + searchKey + " in google");
 		driver.navigate().to("http://www.google.com");		
 		WebElement element = driver.findElement(By.name("q"));

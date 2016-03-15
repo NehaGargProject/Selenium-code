@@ -1,5 +1,6 @@
 package com.javacodegeeks.testng.selenium;
 
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -43,4 +44,3 @@ public class TestNGSeleniumSimpleSearchExample {
 		driver.quit();
 	}
 }
-

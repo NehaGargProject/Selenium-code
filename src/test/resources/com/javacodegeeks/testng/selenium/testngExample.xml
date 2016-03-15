@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNgSeleniumSuite" parallel="false">
+  <test name="Test">
+    <classes>
+      <class name="com.javacodegeeks.testng.selenium.TestNGExample" />
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Example -->

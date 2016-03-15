@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNgSeleniumSuite" parallel="false">
+  <test name="Test">
+    <classes>
+      <class name="org.openqa.selenium.testing.example.GoogleSuggest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- GoogleSuggestSuite -->

@@ -1,5 +1,7 @@
 package com.javacodegeeks.testng.selenium;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +30,7 @@ public class TestNGSeleniumDependentMethodExample extends AbstractTestNGSpringCo
 		System.out.println("You are in page " + driver.getTitle());
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
-				WebElement link = driver.findElement(By.xpath("//*[text()='TestNG Maven Project Example']"));
+				WebElement link = driver.findElement(By.linkText("TestNG Maven Project Example"));
 				if (link != null) {
 					System.out.println("Going to click on '" + link.getText() + "'");
 					link.click();
@@ -44,21 +46,22 @@ public class TestNGSeleniumDependentMethodExample extends AbstractTestNGSpringCo
 		final String searchKey = "TestNG";
 		System.out.println("Search " + searchKey + " in JCG");
 		driver.navigate().to("http://examples.javacodegeeks.com/");
-		(new WebDriverWait(driver, 20)).until(new ExpectedCondition<Boolean>() {
+		(new WebDriverWait(driver, 30)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
-				WebElement popup;
-				popup = d.findElement(By.xpath("//html/body/div[8]/div/a"));
-				//("fancybox-item fancybox-close"));
+				//System.out.println(d.getPageSource());
+				WebElement popup = null;
+				//popup = d.findElement(By.cssSelector("a.fancybox-item fancybox-close"));
+				//System.out.println("popup 1" + popup );
+				//popup = d.findElement(By.cssSelector("a.fancybox-item fancybox-close"));
+				//System.out.println("popup 2" + popup );
+				popup = d.findElement(By.xpath("//*[@class='fancybox-item fancybox-close']"));
+				System.out.println("popup 3" + popup );
+
+				
 				if (popup != null) {
 					System.out.println("Found popup, close it");
 					popup.click();
 				}
-				
-				//popup = d.findElement(By.linkText("Close this popup"));
-				//if (popup != null) {
-			//0		System.out.println("Found popup, close it");
-				//	popup.click();
-				//}
 				return popup != null;
 			}
 		});
@@ -67,7 +70,7 @@ public class TestNGSeleniumDependentMethodExample extends AbstractTestNGSpringCo
 		element.sendKeys(searchKey);
 		System.out.println("submit");		
 		element.submit();
-		assertPageTitle("You searched for " + searchKey);
+		assertPageTitle(searchKey);
 		System.out.println("Got " + searchKey + " results");
 	}
 	
@@ -75,8 +78,7 @@ public class TestNGSeleniumDependentMethodExample extends AbstractTestNGSpringCo
 		(new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				System.out.println("TITLE: " + d.getTitle());
-				return d.getTitle().toLowerCase()
-						.startsWith(title.toLowerCase());
+				return d.getTitle().toLowerCase().contains(title.toLowerCase());
 			}
 		});
 	}

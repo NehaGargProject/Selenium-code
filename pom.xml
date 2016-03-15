@@ -5,9 +5,8 @@
 	<groupId>com.javacodegeeks.testng.spring</groupId>
 	<artifactId>testNGSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
-    <dependencies>
-    <dependency>
+	<dependencies>
+    <!--dependency>
         <groupId>org.uncommons</groupId>
         <artifactId>reportng</artifactId>
         <version>1.1.2</version>
@@ -24,7 +23,7 @@
    			 <artifactId>guice</artifactId>
     		<version>3.0</version>
     		<scope>test</scope>
-		</dependency>
+		</dependency -->
 
 	
 		<dependency>
@@ -49,16 +48,16 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
 			<artifactId>jxl</artifactId>
 			<version>2.6.12</version>
 		</dependency>
-	</dependencies>
-	
-    <build>
-      <plugins>
-      <plugin>
+	</dependencies>	
+	<build>
+    <plugins>
+        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
@@ -68,28 +67,33 @@
         </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19</version>
-        <configuration>
-          <suiteXmlFiles>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.5</version>
+            <configuration>
+            <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
-                <properties>
+                <!-- properties>
                     <property>
                         <name>usedefaultlisteners</name>
                         <value>false</value>
                     </property>
                     <property>
                         <name>listener</name>
-                        <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter</value>
+                        <value>org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter</value>
                     </property>
                 </properties>
-                <workingDirectory>target/</workingDirectory>
+                <workingDirectory>target/</workingDirectory -->
             </configuration>
         </plugin>
-      </plugins>
-    </build>
-    
+    </plugins>
+</build>
+<!--  repositories>
+    <repository>
+        <id>java-net</id>
+        <url>http://download.java.net/maven/2</url>
+    </repository>
+</repositories -->
 	<properties>
 		<spring.version>4.1.5.RELEASE</spring.version>
 	</properties>
